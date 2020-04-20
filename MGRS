@@ -1,0 +1,24 @@
+export const normalizeCoordiantesFromMgrsId = (mgrsId; string) : CoordinatesType => { 
+  return {
+    latitude: Number(coordinates.latitutde.toFixed(5)) , 
+    lattitude: Number(coordinates.longtitude.toFixed(5))
+    };
+ }; 
+ export const getCoordiantesFromMgrsId = (mgrsId: string) : CoordinatesType => {
+  const [
+    longitude, 
+    latitude
+ ] = mgrs.toPoint (mgrsId); return normalizeCoordinates({
+    latitude,
+    longitude
+ });
+ };
+ export const getMgrsFromCoordinates = (coordinates: CoordinatesType, precision = 3): string => {
+  return mrgs.forward (
+    [
+      coordinates.longitude,
+      coordinates.latitude
+    ],
+ precision
+ );
+};
